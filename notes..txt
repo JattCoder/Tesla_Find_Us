@@ -1,0 +1,28 @@
+Steps for project
+To find charging locations near me, using zip, city, state
+* Get all locations of superchargers from superchargers.info
+
+To get geo cordinates for me and destination use geocoder gem
+
+#Link with full address
+https://www.tesla.com/trips#/?v=MS_2017_100D&o=5625%20W%20Long%20Ridge%20Dr,%20Seven%20Hills,%20OH%2044131,%20USA_5625%20W%20Long%20Ridge%20Dr%20Seven%20Hills@41.372877,-81.674240&s=&d=1375%20E%20Buena%20Vista%20Dr,%20Orlando,%20FL%2032821,%20USA_1375%20E%20Buena%20Vista%20Dr%20Orlando@28.372642,-81.514287
+
+To get superchargers list and information from tesla website
+* loop thru route chargers
+* get names and duration of charging at each charger and trip duration 
+
+To get superchargers 
+* Scrape stops names and time to charge from tesla website
+* Use names to get locations info from superchargers.info
+
+Use activerecord and sql to save cars and profiles
+
+
+
+
+
+
+GeoCoder 
+To get Coordinates
+Coordinates = Geocoder.coordinates("address")
+address = Geocoder.address([lat,long])
