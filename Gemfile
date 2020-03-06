@@ -15,7 +15,8 @@ gem "sinatra-activerecord"
 gem "bcrypt" #to secure password
 gem "require_all"
 gem 'sqlite3', '~> 1.3.6'
-gem 'shotgun'
+gem "nokogiri"
+gem "httparty"
 
 group :development do
   gem "tux"
