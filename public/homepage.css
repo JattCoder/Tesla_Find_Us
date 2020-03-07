@@ -1,0 +1,90 @@
+body {
+    background-color: white;
+}
+
+#email {
+  border-radius: 25px;
+  font-family: Verdana;
+  outline: none;
+  outline-width: 0;
+  color: white;
+  width: 350px;
+  padding: 7px;
+  height: 35px;
+  border: 10px #ff0000;
+  border-style: offset;
+  position: absolute;
+  background-position: center;
+  background-color: lightgrey;
+}
+
+#password {
+  margin-top: 20px;
+  border-radius: 25px;
+  font-family: Verdana;
+  outline: none;
+  outline-width: 0;
+  color: white;
+  width: 350px;
+  margin-top: 60px;
+  padding: 7px;
+  height: 35px;
+  border: 10px #ff0000;
+  border-style: offset;
+  position: absolute;
+  background-position: center;
+  background-color: lightgrey;
+}
+
+#loginbtn {
+  font-family: Verdana;
+  outline: none;
+  outline-width: 0;
+  height: 40px;
+  width: 360px;
+  margin-top: 130px;
+  border-radius: 25px;
+  border-style: offset;
+  color: white;
+  border: 3px;
+  background: #d92121;
+  position: absolute;
+  background-position: center;
+}
+
+#registerbtn{
+  font-family: Verdana;
+  outline: none;
+  outline-width: 0;
+  height: 40px;
+  width: 360px;
+  margin-top: 190px;
+  border-radius: 25px;
+  border-style: offset;
+  color: black;
+  border: 3px;
+  background: white;
+  position: absolute;
+  background-position: center;
+}
+
+img {
+  margin-left: 100px;
+  margin-bottom: 80px;
+  height: 100px;
+  width: 100%;
+  border: 0px solid #ddd;
+  border-radius: 0px;
+  padding: 5px;
+  width: 150px;
+}
+
+#login {
+  margin: 0 auto;
+  margin-top: 200px;
+  height: auto;
+  width: 400px;
+  background-size: 400px;
+  border-style: offset;
+  background-position: center;
+}

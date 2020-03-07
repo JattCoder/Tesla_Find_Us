@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link type="text/css" href="/homepage.css" rel="stylesheet"></link>
+        <title>Tesla</title>
+    </head>
+    <body>
+        <div id="login">
+            <img src="Tesla-logo.png" alt="Tesla">
+            <form action="/login" method="POST">
+	            <input type="text" id="email" fontFamily="monospace" name="email" placeholder="Email" onmouseover="emailborder()" onmouseleave="reverseemail()">
+	            <input type="password" id="password" fontFamily = "monospace" name="password" placeholder="Password" onmouseover="passborder()" onmouseleave="reversepass()">
+	            <input type="submit" id="loginbtn" value="Login" onmouseover="loginborder()" onmouseleave="reverselogin()" onclick="onsubmit()">
+            </form>
+            <input type="submit" id="registerbtn" value="Register">
+        </div>
+        <script>
+            function loginborder(){
+                document.getElementById("loginbtn").style.border = "2px solid #565656";
+            }
+            function reverselogin (){
+                document.getElementById("loginbtn").style.border = "";
+            }
+            function emailborder(){
+                document.getElementById("email").style.border = "2px solid #565656";
+            }
+            function reverseemail (){
+                document.getElementById("email").style.border = "";
+            }
+            function passborder(){
+                document.getElementById("password").style.border = "2px solid #565656";
+            }
+            function reversepass(){
+                document.getElementById("password").style.border = "";
+            }
+            function onsubmit(){
+                if(document.getElementById("email").value == "" || document.getElementById("password").value == ""){
+                    alert("Please check your email and password!")
+                    return false
+                }
+            }
+        </script>
+    </body>
+</html
