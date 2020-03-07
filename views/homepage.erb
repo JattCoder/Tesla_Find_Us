@@ -7,12 +7,14 @@
     <body>
         <div id="login">
             <img src="Tesla-logo.png" alt="Tesla">
-            <form action="/login" method="POST">
-	            <input type="text" id="email" fontFamily="monospace" name="email" placeholder="Email" onmouseover="emailborder()" onmouseleave="reverseemail()">
-	            <input type="password" id="password" fontFamily = "monospace" name="password" placeholder="Password" onmouseover="passborder()" onmouseleave="reversepass()">
+            <form action="/register" method="POST">
+	            <input type="text" id="email" name="email" placeholder="Email" onmouseover="emailborder()" onmouseleave="reverseemail()">
+	            <input type="password" id="password" name="password" placeholder="Password" onmouseover="passborder()" onmouseleave="reversepass()">
 	            <input type="submit" id="loginbtn" value="Login" onmouseover="loginborder()" onmouseleave="reverselogin()" onclick="onsubmit()">
             </form>
-            <input type="submit" id="registerbtn" value="Register">
+            <form action="/register" method="GET">
+                <input type="submit" id="registerbtn" value="Register" onclick="onsubmit()">
+            </form>
         </div>
         <script>
             function loginborder(){
@@ -34,6 +36,7 @@
                 document.getElementById("password").style.border = "";
             }
             function onsubmit(){
+                <h1>Its going thru this</h1>
                 if(document.getElementById("email").value == "" || document.getElementById("password").value == ""){
                     alert("Please check your email and password!")
                     return false
@@ -41,4 +44,4 @@
             }
         </script>
     </body>
-</html
+</html>
