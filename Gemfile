@@ -17,6 +17,7 @@ gem "require_all"
 gem 'sqlite3', '~> 1.3.6'
 gem "nokogiri"
 gem "httparty"
+gem 'rest-client', '~> 2.0.2'
 
 group :development do
   gem "tux"

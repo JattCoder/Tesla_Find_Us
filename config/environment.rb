@@ -1,6 +1,8 @@
 ENV['SINATRA_ENV'] ||= "development"
 require 'capybara/dsl'
 require 'bundler/setup'
+require 'ostruct'
+require 'date'
 
 Bundler.require(:default, ENV['SINATRA_ENV'])
 

@@ -2,7 +2,7 @@ require "./config/environment"
 require "./models/user.rb"
 require "./models/car.rb"
 require "geocoder"
-#require "./app/models/user" Here i will have cars and users models class where active record will be used
+
 class TeslaController < Sinatra::Base
 
     configure do
@@ -55,6 +55,7 @@ class TeslaController < Sinatra::Base
             redirect to "/"
         else
             result = request.location
+            @locations = Location.new
             @user = User.find_by(id: session[:user_id])
             erb :account
         end
