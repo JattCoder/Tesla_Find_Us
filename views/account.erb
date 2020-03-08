@@ -1,1 +1,46 @@
-<h1><%=params[:email]%></h1>
+<!DOCTYPE html>
+<html>
+    <head>
+        <link type="text/css" href="/account.css" rel="stylesheet"></link>
+        <title>Tesla - Account</title>
+        <div id="logo_bar"><img id="logo" src="Tesla-logo.png" alt="Tesla"></div>
+    </head>
+    <body>
+        <div id="logout">
+            <form action="/logout" method="POST">
+	            <input type="submit" id="lgbtn" value="Logout">
+            </form>
+        </div>
+        <header id="material">
+            <div id="info">
+                <h2 class="headofheader">Account Details</h2>
+                <h4 class="infoofheader"><%=@user.name%></h4>
+                <h4 class="infoofheader"><%=@user.email%></h4>
+                <%binding.pry%>
+            </div>
+            <div class="seprator"></div>
+            <div id="lookup">
+                <div id="nearme">
+                    <div id="findit">
+                        <form action="/nearme" method="POST">
+                            <h2 class="headofheader">Superchargers Near me</h2>
+	                        <input type="text" id="nearmeh" name="nearmeh" placeholder="City, State, zipcode">
+	                        <input type="submit" id="search" value="Search">
+                        </form>
+                    </div>
+                    <div id="exploreit">
+                        <form action="/explore" method="POST">
+                            <h2 class="headofheader">Explore Route</h2>
+                            <input type="text" id="start" name="start" placeholder="From">
+	                        <input type="text" id="destination" name="destination" placeholder="To">
+	                        <input type="submit" id="explore" value="Explore Route">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div id="shadow">
+            <img id="content" src="teslamodels.png" alt="Tesla">
+        </div>
+    </body>
+</html>

@@ -12,7 +12,6 @@ class TeslaController < Sinatra::Base
 	end
 
     get '/' do
-        session.clear #Temporary till logout button is designed.
         if session[:user_id] == nil
             erb :homepage
         else
@@ -29,9 +28,12 @@ class TeslaController < Sinatra::Base
 			redirect to "/register"
         else
             user = User.new(params)
-            user.save
-            session[:user_id] = user.id
-			redirect to "/account"
+            if user.save
+                session[:user_id] = user.id
+                redirect to "/account"
+            else
+                redirect to "/"
+            end
 		end
     end
 
@@ -50,7 +52,6 @@ class TeslaController < Sinatra::Base
     end
 
     get '/account' do
-        #get all of my saved cars
         if session[:user_id] == nil
             redirect to "/"
         else
@@ -61,7 +62,17 @@ class TeslaController < Sinatra::Base
         end
     end
 
-    get '/logout' do
+    post '/account/search' do
+        if params[:nearmeh] == ""
+            redirect to "/account"
+        else
+            @nearme = Location.find(params[:nearmeh])
+            erb :nearme
+        end
+    end
+
+    post '/logout' do
         session.clear
+        redirect to '/'
     end 
 end

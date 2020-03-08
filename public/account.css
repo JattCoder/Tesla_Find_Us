@@ -1,0 +1,201 @@
+body {
+    background-color: white;
+}
+
+#heading {
+    font-Family: "Verdana";
+    color: black;
+}
+
+#lgbtn {
+  right:10px;
+  top: 10px;
+  margin-top: 20px;
+  margin-right: 20px;
+  padding: 5px;
+  position: fixed;
+  font-family: Verdana;
+  outline: none;
+  outline-width: 0;
+  height: 40px;
+  width: 160px;
+  border-radius: 10px;
+  border-style: offset;
+  border-color: #d92121;
+  color:#d92121;
+  border: 2px solid #d92121;
+  background:white;
+}
+
+#logout {
+  position: absolute;
+  height: auto;
+  width: 400px;
+  background-size: 400px;
+  border-style: offset;
+  background-position: center;
+}
+
+#logo {
+  margin-top: 10px;
+  margin-left: 10px;
+  height: 80px;
+  width: 10%;
+  border: 0px solid #ddd;
+  border-radius: 0px;
+  padding: 5px;
+  width: 150px;
+}
+
+#material {
+    margin: 0 auto;
+    bottom: 30px;
+    width: auto;
+    height: 100px;
+    margin-top: 40px;
+    background-size: 350px;
+    border-style: offset;
+    background-position: center;
+}
+
+#info {
+    margin: 80px;
+    margin-top: 80px;
+    margin-left: 80px;
+    margin-right: 80px;
+    margin-bottom: 120px;
+    float: left;
+}
+
+.seprator {
+    float: left;
+    border-left: 1px solid darkgrey;
+    height: 500px;
+}
+
+#nearme {
+    height: auto;
+    width: auto;
+    background-size: 400px;
+    border-style: offset;
+    background-position: center;
+    margin: 80px;
+    float: left;
+}
+
+shadow {
+    display:block;
+    position:relative;
+}
+
+
+#content {
+    position:fixed;
+    height: 280px;
+    width: 470px;
+    right:10px;
+    bottom: 10px;
+    box-shadow: 25px 25px 50px 0 white inset, -25px -25px 50px 0 white inset;
+}
+
+.shadow:before {
+    display:block;
+    content:'';
+    position:absolute;
+    width:470px;
+    height:280px;
+    -moz-box-shadow:inset 0px 0px 6px 6px rgba(255,255,255,1);
+    -webkit-box-shadow:inset 0px 0px 6px 6px rgba(255,255,255,1);
+    box-shadow:inset 0px 0px 6px 6px rgba(255,255,255,1);
+}
+
+#nearmeh {
+    padding: 20px;
+    border-radius: 25px;
+    font-family: Verdana;
+    outline: none;
+    outline-width: 0;
+    color: #d92121;
+    width: 250px;
+    padding: 7px;
+    height: 30px;
+    border: 10px #ff0000;
+    border-style: offset;
+    background-position: center;
+    background-color: lightgrey;
+  }
+  
+  #start {
+    padding: 20px;
+    border-radius: 25px;
+    font-family: Verdana;
+    outline: none;
+    outline-width: 0;
+    color: #d92121;
+    width: 250px;
+    padding: 7px;
+    height: 30px;
+    border: 10px #ff0000;
+    border-style: offset;
+    background-color: lightgrey;
+  }
+  
+  #destination {
+    padding: 20px;
+    border-radius: 25px;
+    font-family: Verdana;
+    outline: none;
+    outline-width: 0;
+    color: #d92121;
+    width: 250px;
+    padding: 7px;
+    height: 30px;
+    border: 10px #ff0000;
+    border-style: offset;
+    background-position: center;
+    background-color: lightgrey;
+  }
+
+  #search {
+    margin-left: 30px;
+    font-family: Verdana;
+    outline: none;
+    outline-width: 0;
+    height: 40px;
+    width: 250px;
+    border-radius: 25px;
+    border-style: offset;
+    color: white;
+    border: 3px;
+    background: #d92121;
+    position: absolute;
+  }
+
+  #explore {
+    margin-left: 30px;
+    font-family: Verdana;
+    outline: none;
+    outline-width: 0;
+    height: 40px;
+    width: 250px;
+    border-radius: 25px;
+    border-style: offset;
+    color: white;
+    border: 3px;
+    background: #d92121;
+  }
+
+#logobar {
+    height: 10px;
+    width: 10px;
+}
+
+.headofheader {
+    font-Family: "Verdana";
+    color: black;
+}
+
+.infoofheader {
+    font-Family: "Verdana";
+    color:#d92121; 
+}
