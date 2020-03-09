@@ -6,23 +6,24 @@
         <div id="logo_bar"><img id="logo" src="Tesla-logo.png" alt="Tesla"></div>
     </head>
     <body>
-        <form action="/account/search" method="POST">
-            <h2 class="headofheader">Superchargers Near me</h2>
-            <input type="text" id="nearmeh" name="nearmeh" placeholder="City, State, zipcode">
-            <input type="submit" id="search" value="Search">
-        </form>
-        <div class=<% @@nearme.each do |key,data| %>>
-            <div class="box">
-                <div class="locationtitle"><%= data["name"] %></div>
-                <div class="data"><%=   data["address"]["street"] %></div><br>
-                <div class="datatwo"><%=   data["address"]["city"] %></div> <div class="datatwo"><%= data["address"]["state"] %></div> <div class="datatwo"><%= data["address"]["zip"] %></div><br>
-                <div class="datathree"><%=   data["address"]["country"] %></div><br><br>
-                <div class="secondtitle">Charging</div>
-                <div class="datathree"><%= data["stallCount"] %></div><div class="datathree">superchargers, up to</div><div class="datathree"><%= data["powerKilowatt"] %></div><div class="datathree">kW</div>
-
-
-            </div>
-        <% end %>
+        <div class="helper">
+            <form action="/account/search" method="POST">
+                <h2 class="headofheader">Superchargers Near me</h2>
+                <input type="text" id="nearmeh" name="nearmeh" placeholder="City, State, zipcode">
+                <input type="submit" id="search" value="Search">
+            </form>
+        </div>
+        <div class="helper">
+            <div class=<% @@nearme.each do |key,data| %>>
+                <div class="box">
+                    <div class="locationtitle"><%= data["name"] %></div>
+                    <div class="data"><%=   data["address"]["street"] %></div><br>
+                    <div class="datatwo"><%=   data["address"]["city"] %></div> <div class="datatwo"><%= data["address"]["state"] %></div> <div class="datatwo"><%= data["address"]["zip"] %></div><br>
+                    <div class="datathree"><%=   data["address"]["country"] %></div><br><br>
+                    <div class="secondtitle">Charging</div>
+                    <div class="datathree"><%= data["stallCount"] %></div><div class="datathree">superchargers, up to</div><div class="datathree"><%= data["powerKilowatt"] %></div><div class="datathree">kW</div>
+                </div>
+            <% end %></div>
         </div>
         <div id="show">
             <img id="con" src="model3charge.jpg" alt="Tesla">
