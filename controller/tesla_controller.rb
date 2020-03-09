@@ -62,7 +62,7 @@ class TeslaController < Sinatra::Base
     end
 
     post '/account/search' do
-        if params[:nearmeh] == ""
+        if session[:user_id] == nil || params[:nearmeh] == ""
             redirect to "/account"
         else
             location = Location.new

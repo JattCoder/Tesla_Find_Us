@@ -3,6 +3,7 @@ body {
 }
 
 #logo {
+    position: fixed;
     margin-top: 10px;
     margin-left: 10px;
     height: 80px;
@@ -40,8 +41,8 @@ shadow {
 }
 
 #logobar {
-    height: 10px;
-    width: 10px;
+    height: 50px;
+    width: 50px;
 }
 
 #search {
@@ -134,3 +135,61 @@ shadow {
 .helper {
     margin-left: 18%;
 }
+
+#lgbtn {
+    right:10px;
+    top: 10px;
+    margin-top: 20px;
+    margin-right: 20px;
+    padding: 5px;
+    position: fixed;
+    font-family: Verdana;
+    outline: none;
+    outline-width: 0;
+    height: 40px;
+    width: 160px;
+    border-radius: 10px;
+    border-style: offset;
+    border-color: #d92121;
+    color:#d92121;
+    border: 2px solid #d92121;
+    background:white;
+  }
+  
+  #logout {
+    position: absolute;
+    height: auto;
+    width: 400px;
+    background-size: 400px;
+    border-style: offset;
+    background-position: center;
+  }
+
+  #acbtn {
+    right:10px;
+    top: 10px;
+    margin-top: 20px;
+    margin-right: 210px;
+    padding: 5px;
+    position: fixed;
+    font-family: Verdana;
+    outline: none;
+    outline-width: 0;
+    height: 40px;
+    width: 160px;
+    border-radius: 10px;
+    border-style: offset;
+    border-color: #d92121;
+    color:#d92121;
+    border: 2px solid #d92121;
+    background:white;
+  }
+  
+  #account {
+    position: absolute;
+    height: auto;
+    width: 400px;
+    background-size: 400px;
+    border-style: offset;
+    background-position: center;
+  }
