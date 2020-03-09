@@ -11,18 +11,20 @@
 	            <input type="submit" id="lgbtn" value="Logout">
             </form>
         </div>
+        <div id="shadow">
+            <img id="content" src="teslamodels.png" alt="Tesla">
+        </div>
         <header id="material">
             <div id="info">
                 <h2 class="headofheader">Account Details</h2>
                 <h4 class="infoofheader"><%=@user.name%></h4>
                 <h4 class="infoofheader"><%=@user.email%></h4>
-                <%binding.pry%>
             </div>
             <div class="seprator"></div>
             <div id="lookup">
                 <div id="nearme">
                     <div id="findit">
-                        <form action="/nearme" method="POST">
+                        <form action="/account/search" method="POST">
                             <h2 class="headofheader">Superchargers Near me</h2>
 	                        <input type="text" id="nearmeh" name="nearmeh" placeholder="City, State, zipcode">
 	                        <input type="submit" id="search" value="Search">
@@ -39,8 +41,5 @@
                 </div>
             </div>
         </header>
-        <div id="shadow">
-            <img id="content" src="teslamodels.png" alt="Tesla">
-        </div>
     </body>
 </html>

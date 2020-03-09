@@ -3,4 +3,12 @@
     <head>
         <title>Tesla - <%=params[:nearmeh]%></title>
     </head>
+    <body>
+        <div class=<% @@nearme.each do |key,data| %>>
+            <p><%= data["name"] %></p>
+            <p><%=   data["address"]["street"] %></p>
+            <p><%=   data["address"]["city"] %></p> <p><%= data["address"]["state"] %></p> <p><%= data["address"]["zip"] %></p>
+            <p><%=   data["address"]["country"] %></p><br>
+        <% end %></div>
+    </body>
 </html>

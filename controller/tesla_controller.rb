@@ -56,7 +56,6 @@ class TeslaController < Sinatra::Base
             redirect to "/"
         else
             result = request.location
-            @locations = Location.new
             @user = User.find_by(id: session[:user_id])
             erb :account
         end
@@ -66,7 +65,8 @@ class TeslaController < Sinatra::Base
         if params[:nearmeh] == ""
             redirect to "/account"
         else
-            @nearme = Location.find(params[:nearmeh])
+            location = Location.new
+            @@nearme = location.find(params[:nearmeh])
             erb :nearme
         end
     end
