@@ -77,9 +77,7 @@ class TeslaController < Sinatra::Base
         if params[:start] == "" || params[:destination] == ""
             redirect to "/account"
         else
-            planned_route = Address.new(params[:start],params[:destination])
-            #check if location is full address, city, zip, state
-            #or scrape location name from tesla web and and get details from location class 
+            @planned_route = Address.new.address(params[:start],params[:destination])
             erb :route
         end
     end
