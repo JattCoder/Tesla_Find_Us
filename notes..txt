@@ -31,15 +31,17 @@ address = Geocoder.address([lat,long])
 
 
 In order to find out best possible route
-EXAMPLE:
-car range = 200
-total distance = 1000
-using car range = 150 -- saving 50 as backup 
-holdpoint = chargedid if charger passes less distance and within car range
-if passes both tests -- total distance = distance left over and add chargerid to array
-
-to check distance between point and car AND point and destination -- Geocoder
-
-In order to find (driving time) -- total distance / average speed(70mph)
-
-In order to find total route time -- driving time + ALLCHARGERS(calculate charging speed using supercharger power)
+EXAMPLE
+stops = []
+car = 250 miles of range
+superchargerid = ""
+loop.. supercharger -->
+if distance between supercharger and desitination is less than start to destination
+    distance_covered = totaldistance - distance between supercharger and destination
+    if distance_covered < (car - 50)
+        superchargerid = current-supper-charer-id
+    else
+        stops << superchargerid
+    end
+    totaldistance = distance between supercharger and destinaiton
+end

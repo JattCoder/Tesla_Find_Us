@@ -5,10 +5,13 @@ require "geocoder"
 
 class TeslaController < Sinatra::Base
 
+    @location = {}
+
     configure do
 		set :views, "./views"
 		enable :sessions
-		set :session_secret, "password_security"
+        set :session_secret, "password_security"
+        Geocoder::Configuration.timeout = 15
 	end
 
     get '/' do
@@ -67,7 +70,7 @@ class TeslaController < Sinatra::Base
         elsif params[:nearmeh] == ""
             redirect to "/account"
         else
-            location = Location.new
+            @location = Location.new
             @@nearme = location.find(params[:nearmeh])
             erb :nearme
         end
@@ -77,7 +80,7 @@ class TeslaController < Sinatra::Base
         if params[:start] == "" || params[:destination] == ""
             redirect to "/account"
         else
-            @planned_route = Address.new.address(params[:start],params[:destination])
+            @planned_route = RoutePlanner.new.geo(params[:start],params[:destination])
             erb :route
         end
     end
