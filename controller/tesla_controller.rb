@@ -62,12 +62,25 @@ class TeslaController < Sinatra::Base
     end
 
     post '/account/search' do
-        if session[:user_id] == nil || params[:nearmeh] == ""
+        if session[:user_id] == nil
+            redirect to '/'
+        elsif params[:nearmeh] == ""
             redirect to "/account"
         else
             location = Location.new
             @@nearme = location.find(params[:nearmeh])
             erb :nearme
+        end
+    end
+
+    post '/account/route-planner' do
+        if params[:start] == "" || params[:destination] == ""
+            redirect to "/account"
+        else
+            planned_route = Address.new(params[:start],params[:destination])
+            #check if location is full address, city, zip, state
+            #or scrape location name from tesla web and and get details from location class 
+            erb :route
         end
     end
 
