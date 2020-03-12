@@ -60,6 +60,7 @@ class TeslaController < Sinatra::Base
         else
             result = request.location
             @user = User.find_by(id: session[:user_id])
+            @collection = Car.where(user: session[:user_id])
             erb :account
         end
     end
@@ -125,6 +126,15 @@ class TeslaController < Sinatra::Base
             else
                 redirect to '/'
             end
+        end
+    end
+
+    post '/account/sell_car' do
+        if session[:user_id] == nil
+            redirect to '/'
+        else
+            Car.where(user: session[:user_id]).destroy_all
+            redirect to '/account'
         end
     end
 

@@ -8,7 +8,9 @@ class Location
 
     def find(str)
         findcharger = {}
+        allstates = []
         @res_hash["results"].each do |charger|
+            checkstate = Integer(charger["address"]["state"]) rescue false
             if charger["address"]["city"].to_s.downcase == str.downcase || charger["address"]["zip"].to_s.downcase == str.downcase || charger["address"]["state"].to_s.downcase == str.downcase
                 findcharger[charger["locationId"]] = charger
             end

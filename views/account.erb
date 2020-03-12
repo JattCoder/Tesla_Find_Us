@@ -19,6 +19,15 @@
                 <h2 class="headofheader">Account Details</h2>
                 <h4 class="infoofheader"><%=@user.name%></h4>
                 <h4 class="infoofheader"><%=@user.email%></h4>
+                <% if @collection.length == 0 %>
+                    <form action="/tesla_collection/shop" method="GET">
+	                    <input type="submit" id="explore" value="Shop Tesla">
+                    </form>
+                <% else %>
+                    <form action="/account/sell_car" method="POST">
+                        <input type="submit" id="explore" value="Sell Tesla">
+                    </form>
+                <% end %>
             </div>
             <div class="seprator"></div>
             <div id="lookup">
@@ -26,15 +35,15 @@
                     <div id="findit">
                         <form action="/account/search" method="POST">
                             <h2 class="headofheader">Superchargers Near me</h2>
-	                        <input type="text" id="nearmeh" name="nearmeh" placeholder="City, State, zipcode">
+	                        <input type="text" id="nearmeh" name="nearmeh" placeholder="City or Zipcode">
 	                        <input type="submit" id="search" value="Search">
                         </form>
                     </div>
                     <div id="exploreit">
                         <form action="/account/route-planner" method="POST">
                             <h2 class="headofheader">Explore Route</h2>
-                            <input type="text" id="start" name="start" placeholder="From">
-	                        <input type="text" id="destination" name="destination" placeholder="To">
+                            <input type="text" id="start" name="start" placeholder="Start">
+	                        <input type="text" id="destination" name="destination" placeholder="Destination">
 	                        <input type="submit" id="explore" value="Explore Route">
                         </form>
                     </div>
