@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <link type="text/css" href="/tesla_collection.css" rel="stylesheet"></link>
+        <div id="logobar"><img id="logo" src="/Tesla-logo.png"></div>
+        <div id="account">
+            <form action="/account" method="GET">
+                <input type="submit" id="acbtn" value="Account">
+            </form>
+        </div>
+        <div id="logout">
+            <form action="/logout" method="POST">
+                <input type="submit" id="lgbtn" value="Logout">
+            </form>
+        </div>
+        <title>Tesla - Collection</title>
+    </head>
+    <body>
+        <h2 id="header">My Tesla Collection</h2>
+        <div class="helper">
+            <div class=<% @collection.each do |car| %> >
+                <div class="btn">
+                    <form action="/account/tesla_collection" method="POST">
+                        <input type="hidden" id="make" name="make" value= <%= car.make %> >
+                        <input type="hidden" id="model" name="model" value= <%= car.model %> >
+                        <input type="hidden" id="range" name="range" value= <%= car.range %> >
+                        <input type="submit" id="car" value= <%= "#{car.model} (#{car.range})" %> >
+                    </form>
+                </div>
+            <% end %></div>
+            <div class="nocar"><% "No Tesla Added Yet..." if @collection.length == 0 %></div>
+        </div>
+        <div class="newcar">
+            <form action="account/tesla_collection/shop" method="POST">
+                <input type="submit" id="newtesla" value="Add New Tesla">
+            </form>
+        </div>
+        <div id="shadow"><img id="con" src="/modelxmobile.png"></div>
+    </body>
+</html>

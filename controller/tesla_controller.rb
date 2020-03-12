@@ -70,18 +70,61 @@ class TeslaController < Sinatra::Base
         elsif params[:nearmeh] == ""
             redirect to "/account"
         else
-            @location = Location.new
+            location = Location.new
             @@nearme = location.find(params[:nearmeh])
             erb :nearme
         end
     end
 
     post '/account/route-planner' do
-        if params[:start] == "" || params[:destination] == ""
-            redirect to "/account"
+        if session[:user_id] == nil
+            redirect to '/'
         else
-            @planned_route = RoutePlanner.new.geo(params[:start],params[:destination])
-            erb :route
+            if params[:start] == "" || params[:destination] == ""
+                redirect to "/account"
+            else
+                car = Car.where(user: session[:user_id]).last
+                if car != nil
+                    params[:model] = car.model
+                    params[:range] = car.range
+                    @planned_route = RoutePlanner.new.geo(params[:start],params[:destination],car.range.to_i)
+                    erb :route
+                else
+                    redirect to '/account/tesla_collection/shop'
+                end
+            end
+        end
+    end
+
+    get '/account/tesla_collection' do
+        if session[:user_id] == nil
+            redirect to '/'
+        else
+            @collection = Car.where(user: session[:user_id])
+            erb :tesla_collection
+        end
+    end
+
+    get '/account/tesla_collection/shop' do
+        redirect to '/' if session[:user_id] == nil
+        erb :shop if session[:user_id] != nil
+    end
+
+    post '/account/tesla_collection' do
+        if session[:user_id] == nil
+            redirect to '/'
+        else
+            if params[:user].to_i == session[:user_id]
+                params[:user] = session[:user_id]
+                car = Car.new(params)
+                if car.save
+                    redirect to '/account/tesla_collection'
+                else
+                    redirect to '/account/tesla_collection/shop'
+                end
+            else
+                redirect to '/'
+            end
         end
     end
 

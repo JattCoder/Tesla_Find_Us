@@ -45,80 +45,6 @@ shadow {
     width: 50px;
 }
 
-#search {
-    margin-left: 30px;
-    font-family: Verdana;
-    outline: none;
-    outline-width: 0;
-    height: 40px;
-    width: 250px;
-    border-radius: 25px;
-    border-style: offset;
-    color: white;
-    border: 3px;
-    background: #d92121;
-    position: absolute;
-  }
-
-  #nearmeh {
-    padding: 20px;
-    border-radius: 25px;
-    font-family: Verdana;
-    outline: none;
-    outline-width: 0;
-    color: #d92121;
-    width: 250px;
-    padding: 7px;
-    height: 30px;
-    border: 10px #ff0000;
-    border-style: offset;
-    background-position: center;
-    background-color: lightgrey;
-  }
-
-.headofheader {
-    font-Family: "Verdana";
-    color: black;
-}
-
-.locationtitle {
-    margin: 15px;
-    font-size: 23px;
-    font-Family: "Verdana";
-    color: black;
-}
-
-.secondtitle {
-    margin: 15px;
-    font-size: 15px;
-    font-family: Verdana;
-    color: black;
-}
-
-.data {
-    margin-left: 15px;
-    display: inline;
-    font-size: 15px;
-    font-Family: "Verdana";
-    color:grey; 
-}
-
-.datatwo {
-    margin-left: 15px;
-    display: inline;
-    font-size: 15px;
-    font-Family: "Verdana";
-    color:grey; 
-}
-
-.datathree {
-    margin-left: 15px;
-    display: inline;
-    font-size: 15px;
-    font-Family: "Verdana";
-    color:grey; 
-}
-
 .box {
     margin-left: 100px;
     box-shadow: 3px 3px 3px 3px;
@@ -133,6 +59,7 @@ shadow {
 }
 
 .helper {
+    margin-top: 5%;
     margin-left: 18%;
 }
 
@@ -154,7 +81,7 @@ shadow {
     color:#d92121;
     border: 2px solid #d92121;
     background:white;
-  }
+}
   
   #logout {
     position: absolute;
@@ -191,5 +118,45 @@ shadow {
     width: 400px;
     background-size: 400px;
     border-style: offset;
+    background-position: center;
+  }
+
+  #header {
+      margin-left: 18%;
+      outline: none;
+      outline-width: 0;
+      font-family: Verdana;
+      position: absolute;
+      background-position: center;
+  }
+
+  .carname {
+      display: inline;
+      font-family: Verdana;
+  }
+
+  .car{
+      height: 60px;
+      width: 120px;
+  }
+
+  .last {
+      display: inline;
+      font-family: Verdana;
+      color:#d92121;
+  }
+
+  #car {
+    margin-bottom: 40px;
+    font-family: Verdana;
+    outline: none;
+    outline-width: 0;
+    height: 40px;
+    width: 360px;
+    border-radius: 25px;
+    border-style: offset;
+    color: white;
+    border: 3px;
+    background: #d92121;
     background-position: center;
   }

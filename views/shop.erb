@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <link type="text/css" href="/shop.css" rel="stylesheet"></link>
+        <div id="logobar"><img id="logo" src="/Tesla-logo.png"></div>
+        <div id="account">
+            <form action="/account" method="GET">
+                <input type="submit" id="acbtn" value="Account">
+            </form>
+        </div>
+        <div id="logout">
+            <form action="/logout" method="POST">
+                <input type="submit" id="lgbtn" value="Logout">
+            </form>
+        </div>
+        <title>Tesla - Shop</title>
+    </head>
+    <body>
+    <h2 id="header">Shop Tesla</h2>
+        <div class="helper">
+            <div class="cars">
+                <div class="models">
+                    <p class="carname"><img class="car" src="/ms_icon.png" align="middle"> Tesla Model <p class="last">S</p></p>
+                    <div class="list">
+                        <form action="/account/tesla_collection" method="POST">
+                            <input type="hidden" id="user" name="user" value= <%= session[:user_id] %> >
+                            <input type="hidden" id="make" name="make" value="Tesla">
+                            <input type="hidden" id="model" name="model" value="Model S Standard Range">
+                            <input type="hidden" id="range" name="range" value="285">
+                            <input type="submit" id="car" value="Standard Range (285 mi)">
+                        </form>
+                        <form action="/account/tesla_collection" method="POST">
+                            <input type="hidden" id="user" name="user" value= <%= session[:user_id] %> >
+                            <input type="hidden" id="make" name="make" value="Tesla">
+                            <input type="hidden" id="model" name="model" value="Model S Long Range">
+                            <input type="hidden" id="range" name="range" value="373">
+                            <input type="submit" id="car" value="Long Range (373 mi)">
+                        </form>
+                        <form action="/account/tesla_collection" method="POST">
+                            <input type="hidden" id="user" name="user" value= <%= session[:user_id] %> >
+                            <input type="hidden" id="make" name="make" value="Tesla">
+                            <input type="hidden" id="model" name="model" value="Model S Performance">
+                            <input type="hidden" id="range" name="range" value="348">
+                            <input type="submit" id="car" value="Performance (348 mi)">
+                        </form>
+                    </div>
+                </div>
+                <div class="modelx">
+                    <p class="carname"><img class="car" src="/mx_icon.png" align="middle"> Tesla Model <p class="last">X</p></p>
+                    <div class="list">
+                        <form action="/account/tesla_collection" method="POST">
+                            <input type="hidden" id="user" name="user" value= <%= session[:user_id] %> >
+                            <input type="hidden" id="make" name="make" value="Tesla">
+                            <input type="hidden" id="model" name="model" value="Model X Standard Range">
+                            <input type="hidden" id="range" name="range" value="255">
+                            <input type="submit" id="car" name="car" value="Standard Range (255 mi)">
+                        </form>
+                        <form action="/account/tesla_collection" method="POST">
+                            <input type="hidden" id="user" name="user" value= <%= session[:user_id] %> >
+                            <input type="hidden" id="make" name="make" value="Tesla">
+                            <input type="hidden" id="model" name="model" value="Model X Long Range">
+                            <input type="hidden" id="range" name="range" value="328">
+                            <input type="submit" id="car" name="car" value="Long Range (328 mi)">
+                        </form>
+                        <form action="/account/tesla_collection" method="POST">
+                            <input type="hidden" id="user" name="user" value= <%= session[:user_id] %> >
+                            <input type="hidden" id="make" name="make" value="Tesla">
+                            <input type="hidden" id="model" name="model" value="Model X Performance">
+                            <input type="hidden" id="range" name="range" value="305">
+                            <input type="submit" id="car" name="car" value="Performance (305 mi)">
+                        </form>
+                    </div>
+                </div>
+                <div class="model3">
+                    <p class="carname"><img class="car" src="/m3_icon.png" align="middle"> Tesla Model <p class="last">3</p></p>
+                    <div class="list">
+                        <form action="/account/tesla_collection" method="POST">
+                            <input type="hidden" id="user" name="user" value= <%= session[:user_id] %> >
+                            <input type="hidden" id="make" name="make" value="Tesla">
+                            <input type="hidden" id="model" name="model" value="Model 3 Standard Range">
+                            <input type="hidden" id="range" name="range" value="250">
+                            <input type="submit" id="car" name="car" value="Standard Range (250 mi)">
+                        </form>
+                        <form action="/account/tesla_collection" method="POST">
+                            <input type="hidden" id="user" name="user" value= <%= session[:user_id] %> >
+                            <input type="hidden" id="make" name="make" value="Tesla">
+                            <input type="hidden" id="model" name="model" value="Model 3 Long Range">
+                            <input type="hidden" id="range" name="range" value="322">
+                            <input type="submit" id="car" name="car" value="Long Range (322 mi)">
+                        </form>
+                        <form action="/account/tesla_collection" method="POST">
+                            <input type="hidden" id="user" name="user" value= <%= session[:user_id] %> >
+                            <input type="hidden" id="make" name="make" value="Tesla">
+                            <input type="hidden" id="model" name="model" value="Model 3 Performance">
+                            <input type="hidden" id="range" name="range" value="322">
+                            <input type="submit" id="car" name="car" value="Performance (322 mi)">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="shadow"><img id="con" src="/modelxmobile.png"></div>
+    </body>
+</html>

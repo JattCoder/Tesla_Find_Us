@@ -16,7 +16,8 @@ class Location
         return findcharger
     end
 
-    def self.all
-        @res_hash["results"]
+    def all
+        allchargers = @res_hash["results"]
+        allchargers
     end
 end
