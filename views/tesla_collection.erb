@@ -31,7 +31,7 @@
             <div class="nocar"><% "No Tesla Added Yet..." if @collection.length == 0 %></div>
         </div>
         <div class="newcar">
-            <form action="account/tesla_collection/shop" method="POST">
+            <form action="/tesla_collection/shop" method="GET">
                 <input type="submit" id="newtesla" value="Add New Tesla">
             </form>
         </div>

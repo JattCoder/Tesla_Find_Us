@@ -90,7 +90,7 @@ class TeslaController < Sinatra::Base
                     @planned_route = RoutePlanner.new.geo(params[:start],params[:destination],car.range.to_i)
                     erb :route
                 else
-                    redirect to '/account/tesla_collection/shop'
+                    redirect to '/tesla_collection/shop'
                 end
             end
         end
@@ -105,7 +105,7 @@ class TeslaController < Sinatra::Base
         end
     end
 
-    get '/account/tesla_collection/shop' do
+    get '/tesla_collection/shop' do
         redirect to '/' if session[:user_id] == nil
         erb :shop if session[:user_id] != nil
     end
@@ -118,9 +118,9 @@ class TeslaController < Sinatra::Base
                 params[:user] = session[:user_id]
                 car = Car.new(params)
                 if car.save
-                    redirect to '/account/tesla_collection'
+                    redirect to '/account'
                 else
-                    redirect to '/account/tesla_collection/shop'
+                    redirect to '/tesla_collection/shop'
                 end
             else
                 redirect to '/'

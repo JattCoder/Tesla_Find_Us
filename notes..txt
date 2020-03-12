@@ -45,3 +45,10 @@ if distance between supercharger and desitination is less than start to destinat
     end
     totaldistance = distance between supercharger and destinaiton
 end
+
+
+
+#still left to do
+1. when searching chargers by city,state,zip.. fix state so if users enter entire state, it should work
+2. add sell car button on account page
+3. solve algogethemic way to find chargers on your route.
