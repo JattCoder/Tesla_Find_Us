@@ -1,0 +1,209 @@
+body {
+    background-color: white;
+}
+
+#logo {
+    position: fixed;
+    margin-top: 10px;
+    margin-left: 10px;
+    height: 80px;
+    width: 10%;
+    border: 0px solid #ddd;
+    border-radius: 0px;
+    padding: 5px;
+    width: 150px;
+  }
+
+shadow {
+    display:block;
+    position:relative;
+}
+
+
+#con {
+    position:fixed;
+    height: 280px;
+    width: 550px;
+    right:10px;
+    bottom: 10px;
+    box-shadow: 25px 25px 50px 0 white inset, -25px -25px 50px 0 white inset;
+}
+
+.shadow:before {
+    display:block;
+    content:'';
+    position:absolute;
+    width:550px;
+    height:280px;
+    -moz-box-shadow:inset 0px 0px 6px 6px rgba(255,255,255,1);
+    -webkit-box-shadow:inset 0px 0px 6px 6px rgba(255,255,255,1);
+    box-shadow:inset 0px 0px 6px 6px rgba(255,255,255,1);
+}
+
+#logobar {
+    height: 50px;
+    width: 50px;
+}
+
+.headofheader {
+    font-Family: "Verdana";
+    color: black;
+}
+
+.locationtitle {
+    margin: 15px;
+    font-size: 23px;
+    font-Family: "Verdana";
+    color: black;
+}
+
+.secondtitle {
+    margin: 15px;
+    font-size: 15px;
+    font-family: Verdana;
+    color: black;
+}
+
+.data {
+    margin-left: 15px;
+    display: inline;
+    font-size: 15px;
+    font-Family: "Verdana";
+    color:grey; 
+}
+
+.datatwo {
+    margin-left: 15px;
+    display: inline;
+    font-size: 15px;
+    font-Family: "Verdana";
+    color:grey; 
+}
+
+.datathree {
+    margin-left: 15px;
+    display: inline;
+    font-size: 15px;
+    font-Family: "Verdana";
+    color:grey; 
+}
+
+.box {
+    margin-left: 100px;
+    box-shadow: 3px 3px 3px 3px;
+    height: 300px;
+    width: 460px;
+    margin: 15px;
+    padding: 5px;
+    border-radius: 10px;
+    border-style: offset;
+    color:lightgrey;
+    background:	white;
+}
+
+.helper {
+    margin-left: 18%;
+}
+
+#lgbtn {
+    right:10px;
+    top: 10px;
+    margin-top: 20px;
+    margin-right: 20px;
+    padding: 5px;
+    position: fixed;
+    font-family: Verdana;
+    outline: none;
+    outline-width: 0;
+    height: 40px;
+    width: 160px;
+    border-radius: 10px;
+    border-style: offset;
+    border-color: #d92121;
+    color:#d92121;
+    border: 2px solid #d92121;
+    background:white;
+  }
+  
+  #logout {
+    position: absolute;
+    height: auto;
+    width: 400px;
+    background-size: 400px;
+    border-style: offset;
+    background-position: center;
+  }
+
+  #acbtn {
+    right:10px;
+    top: 10px;
+    margin-top: 20px;
+    margin-right: 210px;
+    padding: 5px;
+    position: fixed;
+    font-family: Verdana;
+    outline: none;
+    outline-width: 0;
+    height: 40px;
+    width: 160px;
+    border-radius: 10px;
+    border-style: offset;
+    border-color: #d92121;
+    color:#d92121;
+    border: 2px solid #d92121;
+    background:white;
+  }
+  
+  #account {
+    position: absolute;
+    height: auto;
+    width: 400px;
+    background-size: 400px;
+    border-style: offset;
+    background-position: center;
+  }
+
+  #start {
+    padding: 20px;
+    border-radius: 25px;
+    font-family: Verdana;
+    outline: none;
+    outline-width: 0;
+    color: #d92121;
+    width: 250px;
+    padding: 7px;
+    height: 30px;
+    border: 10px #ff0000;
+    border-style: offset;
+    background-color: lightgrey;
+  }
+  
+  #destination {
+    padding: 20px;
+    border-radius: 25px;
+    font-family: Verdana;
+    outline: none;
+    outline-width: 0;
+    color: #d92121;
+    width: 250px;
+    padding: 7px;
+    height: 30px;
+    border: 10px #ff0000;
+    border-style: offset;
+    background-position: center;
+    background-color: lightgrey;
+  }
+
+  #explore {
+    margin-left: 30px;
+    font-family: Verdana;
+    outline: none;
+    outline-width: 0;
+    height: 40px;
+    width: 250px;
+    border-radius: 25px;
+    border-style: offset;
+    color: white;
+    border: 3px;
+    background: #d92121;
+  }

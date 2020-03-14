@@ -1,1 +1,42 @@
-<h1>Hello</h1>
+<!DOCTYPE html>
+<html>
+    <head>
+    <link type="text/css" href="/route_planner.css" rel="stylesheet"></link>
+        <div id="logobar"><img id="logo" src="/Tesla-logo.png"></div>
+        <div id="account">
+            <form action="/account" method="GET">
+                <input type="submit" id="acbtn" value="Account">
+            </form>
+        </div>
+        <div id="logout">
+            <form action="/logout" method="POST">
+                <input type="submit" id="lgbtn" value="Logout">
+            </form>
+        </div>
+        <title>Tesla - Route</title>
+    </head>
+    <body>
+        <div class="helper">
+            <form action="/account/route-planner" method="POST">
+                <h2 class="headofheader">Explore Route</h2>
+                <input type="text" id="start" name="start" placeholder="Start">
+                <input type="text" id="destination" name="destination" placeholder="Destination">
+                <input type="submit" id="explore" value="Explore Route">
+            </form>
+        </div>
+        <div class="helper">
+            <div class=<% @@planned_route.each do |key,data| %>>
+                <div class="box">
+                    <div class="locationtitle"> <%= data["name"] %> </div>
+                    <div class="data"> <%=   data["street"] %> </div><br>
+                    <div class="datatwo"> <%=   data["city"] %> </div> <div class="datatwo"><%= data["state"] %></div> <div class="datatwo"><%= data["zip"] %></div><br>
+                    <div class="datathree"> <%=   data["country"] %></div> <br><br>
+                    <div class="secondtitle">Charging</div>
+                    <div class="datathree"> <%= data["chargers"] %> </div> <div class="datathree">superchargers, up to</div> <div class="datathree"><%= data["power"] %> </div> <div class="datathree">kW</div><br><br>
+                    <div class="datathree">Car Battery:</div><div class="datathree"> <%= "#{data["battery"].round(2)}%" %> </div>
+                </div>
+            <% end %></div>
+        </div>
+        <div id="shadow"><img id="con" src="/supercharging.png"></div>
+    </body>
+</html>
