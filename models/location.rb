@@ -9,14 +9,43 @@ class Location
     def find(str)
         findcharger = {}
         allstates = []
+        strcoor = Geocoder.coordinates(str)
         @res_hash["results"].each do |charger|
             checkstate = Integer(charger["address"]["state"]) rescue false
             if charger["address"]["city"].to_s.downcase == str.downcase || charger["address"]["zip"].to_s.downcase == str.downcase || charger["address"]["state"].to_s.downcase == str.downcase
-                findcharger[charger["locationId"]] = charger
+                charger_location = ["#{charger["gps"]["latitude"]}","#{charger["gps"]["longitude"]}"]
+                search_locatiion = ["#{strcoor[0]}","#{strcoor[1]}"]
+                distance = dist_cal([search_locatiion[0].to_f,search_locatiion[1].to_f],[charger_location[0].to_f,charger_location[1].to_f])
+                findcharger[charger["locationId"]] = {
+                    "name" => charger["name"],
+                    "street" => charger["address"]["street"],
+                    "city" => charger["address"]["city"],
+                    "state" => charger["address"]["state"],
+                    "zip" => charger["address"]["zip"],
+                    "stalls" => charger["stallCount"],
+                    "power" => charger["powerKilowatt"],
+                    "distance" => distance
+                }
             end
         end
         return findcharger
     end
+
+    def dist_cal(a, b)
+        rad_per_deg = Math::PI/180
+        rkm = 6371
+        rm = rkm * 1000
+        dlon_rad = (b[1]-a[1]) * rad_per_deg
+        dlat_rad = (b[0]-a[0]) * rad_per_deg
+        lat1_rad, lon1_rad = a.map! {|i| i * rad_per_deg }
+        lat2_rad, lon2_rad = b.map! {|i| i * rad_per_deg }
+        a = Math.sin(dlat_rad/2)**2 + Math.cos(lat1_rad) * Math.cos(lat2_rad) * Math.sin(dlon_rad/2)**2
+        c = 2 * Math.asin(Math.sqrt(a))
+        meters = rm * c
+        kilometers = meters / 1000
+        miles = meters * 0.000621
+        miles.round(2)
+      end
 
     def all
         allchargers = @res_hash["results"]
