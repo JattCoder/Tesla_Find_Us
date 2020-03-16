@@ -25,6 +25,15 @@
             </form>
         </div>
         <div class="helper">
+            <div class="box">
+                <div class="locationtitle">Start: <%= params[:start] %> </div>
+                <div class="secondtitle">Latitude: <%= params[:start_coor][0] %> </div>
+                <div class="secondtitle">Longitude: <%= params[:start_coor][1] %> </div>
+                <form action="/account/search" method="POST">
+                    <input type="hidden" id="destination" name="nearmeh" value= <%= params[:start] %>>
+                    <input type="submit" id="explore" value="Start Superchargers">
+                </form>
+            </div>
             <div class=<% @@planned_route.each do |key,data| %>>
                 <div class="box">
                     <div class="locationtitle"> <%= data["name"] %> </div>
@@ -36,6 +45,15 @@
                     <div class="datathree">Car Battery:</div><div class="datathree"> <%= "#{data["battery"].round(2)}%" %> </div>
                 </div>
             <% end %></div>
+            <div class="box">
+                <div class="locationtitle">Destination: <%= params[:destination] %> </div>
+                <div class="secondtitle">Latitude: <%= params[:end_coor][0] %> </div>
+                <div class="secondtitle">Longitude: <%= params[:end_coor][1] %> </div>
+                <form action="/account/search" method="POST">
+                    <input type="hidden" id="destination" name="nearmeh" value=<%= params[:destination] %>>
+                    <input type="submit" id="explore" value="Destination Superchargers">
+                </form>
+            </div>
         </div>
         <div id="shadow"><img id="con" src="/supercharging.png"></div>
     </body>

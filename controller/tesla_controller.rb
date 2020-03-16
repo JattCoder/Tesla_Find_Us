@@ -89,8 +89,9 @@ class TeslaController < Sinatra::Base
                     params[:model] = car.model
                     params[:range] = car.range
                     coordinates = SearchCoordinates.new.coor(params[:start],params[:destination])
+                    params[:start_coor] = coordinates[0]
+                    params[:end_coor] = coordinates[1]
                     @@planned_route = RoutePlanner.new.geo(coordinates,car.range.to_i)
-                    binding.pry
                     erb :route
                 else
                     redirect to '/tesla_collection/shop'

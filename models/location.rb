@@ -10,9 +10,10 @@ class Location
         findcharger = {}
         allstates = []
         strcoor = Geocoder.coordinates(str)
+        binding.pry
         @res_hash["results"].each do |charger|
             checkstate = Integer(charger["address"]["state"]) rescue false
-            if charger["address"]["city"].to_s.downcase == str.downcase || charger["address"]["zip"].to_s.downcase == str.downcase || charger["address"]["state"].to_s.downcase == str.downcase
+            if charger["address"]["city"].to_s.downcase == str.downcase || charger["address"]["zip"].to_s.downcase == str.downcase || charger["address"]["state"].to_s.downcase == str.downcase || 
                 charger_location = ["#{charger["gps"]["latitude"]}","#{charger["gps"]["longitude"]}"]
                 search_locatiion = ["#{strcoor[0]}","#{strcoor[1]}"]
                 distance = dist_cal([search_locatiion[0].to_f,search_locatiion[1].to_f],[charger_location[0].to_f,charger_location[1].to_f])

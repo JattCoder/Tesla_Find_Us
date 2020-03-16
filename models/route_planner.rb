@@ -2,14 +2,14 @@ require 'geocoder'
 class RoutePlanner
     
     def geo(coordinates,car)
-        arr = []
+        arr = {}
         add1coor = "#{coordinates[0][0]},#{coordinates[0][1]}"
         add2coor = "#{coordinates[1][0]},#{coordinates[1][1]}"
         start_country = Geocoder.address([add1coor.split(",")[0],add1coor.split(",")[1]]).split(", ").last
         dest_country = Geocoder.address([add2coor.split(",")[0],add2coor.split(",")[1]]).split(", ").last
         totaldistance = dist_cal(coordinates[0],coordinates[1],start_country)
-        return arr["None"] = {"Can not plan a route with given address"} if totaldistance > 3000
-        return arr["None"] = {"No Need to make a stop for charing."} if totaldistance < (car - 60)
+        return handle_empty("Can not plan a route with given address") if totaldistance > 3000
+        return handle_empty("No Need to make a stop for charging") if totaldistance < (car - 60)
         chargers = Location.new
         route = findroute(add1coor,add2coor,(totaldistance - (car * 0.45)),chargers.all,car,start_country,dest_country)
         route
@@ -37,6 +37,7 @@ class RoutePlanner
                         "country" => charger["address"]["country"],
                         "chargers" => charger["stallCount"],
                         "power" => charger["powerKilowatt"],
+                        "region" => charger["address"]["region"],
                         "battery" => battery
                     }
                     totaldistance = totaldistance - dis_charger_strt
@@ -61,5 +62,23 @@ class RoutePlanner
         kilometers = meters / 1000
         miles = meters * 0.000621
         miles.round(2)
+      end
+
+      def handle_empty(str)
+        no_route = {}
+        no_route[str] = {
+                        "locationId" => str,
+                        "name" => str,
+                        "street" => "",
+                        "city" => "",
+                        "state" => "",
+                        "zip" => "",
+                        "country" => "",
+                        "chargers" => "N/A",
+                        "power" => "N/A",
+                        "region" => "",
+                        "battery" => 0
+        }
+        no_route
       end
 end
