@@ -1,6 +1,7 @@
 require "./config/environment"
 require "./models/user.rb"
 require "./models/car.rb"
+require "./models/my_superchargers.rb"
 require "geocoder"
 
 class TeslaController < Sinatra::Base
@@ -62,6 +63,36 @@ class TeslaController < Sinatra::Base
             @user = User.find_by(id: session[:user_id])
             @collection = Car.where(user: session[:user_id])
             erb :account
+        end
+    end
+
+    post '/account/my_chargers' do
+        @@my_chargers = MySuperchargers.where(user_id: session[:user_id])
+        erb :my_chargers
+    end
+
+    post '/account/new_charger' do
+        erb :new_charger
+    end
+
+    post '/account/add_charger' do
+        if params[:name] == "" || params[:street] == "" || params[:city] == "" || params[:country] == "" || params[:stalls] == "" || params[:power] == ""
+            erb :new_charger
+        else
+            address = "#{params[:street]}, #{params[:city]}, #{params[:state]}, #{params[:zip]}, #{params[:country]}"
+            coordinates = Geocoder.coordinates(address)
+            if coordinates == nil
+                redirect to "/account"
+            else
+                params[:user_id] = session[:user_id]
+                params[:stalls] = params[:stalls].to_i
+                params[:power] = params[:power].to_i
+                params[:latitude] = coordinates[0]
+                params[:longitude] = coordinates[1]
+                new_charger = MySuperchargers.new(params)
+                new_charger.save
+                redirect to "/account"
+            end
         end
     end
 

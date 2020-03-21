@@ -10,13 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200307005056) do
+ActiveRecord::Schema.define(version: 20200321030217) do
 
   create_table "cars", force: :cascade do |t|
     t.integer "user"
     t.string "make"
     t.string "model"
     t.string "range"
+  end
+
+  create_table "my_superchargers", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "name"
+    t.string "street"
+    t.string "city"
+    t.string "state"
+    t.string "zip"
+    t.string "country"
+    t.integer "stalls"
+    t.integer "power"
+    t.float "latitude"
+    t.float "longitude"
   end
 
   create_table "users", force: :cascade do |t|

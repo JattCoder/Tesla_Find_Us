@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link type="text/css" href="/new_charger.css" rel="stylesheet"></link>
+        <div id="logo_bar"><img id="logo" src="/Tesla-logo.png" alt="Tesla"></div>
+        <title>Tesla</title>
+    </head>
+    <body>
+        <div id="login">
+            <h2 class="headofheader">New Supercharger</h2>
+            <form action="/account/add_charger" method="POST">
+	            <input type="text" id="name" name="name" placeholder="Location Name">
+                <input type="text" id="street" name="street" placeholder="Street">
+                <input type="text" id="city" name="city" placeholder="City">
+                <input type="text" id="state" name="state" placeholder="State">
+                <input type="text" id="zip" name="zip" placeholder="zip">
+                <input type="text" id="country" name="country" placeholder="Country">
+                <input type="number" id="stalls" name="stalls" placeholder="Stalls">
+                <input type="number" id="power" name="power" placeholder="Power in KW/stall">
+	            <input type="submit" id="addbtn" value="Add Supercharger">
+            </form>
+        </div>
+    </body>
+</html>

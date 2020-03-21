@@ -1,0 +1,196 @@
+body {
+    background-color: white;
+}
+
+#name {
+  border-radius: 25px;
+  font-family: Verdana;
+  outline: none;
+  outline-width: 0;
+  color: #d92121;
+  width: 350px;
+  padding: 7px;
+  height: 35px;
+  border: 10px #ff0000;
+  border-style: offset;
+  position: absolute;
+  background-position: center;
+  background-color: lightgrey;
+}
+
+#street {
+  margin-top: 60px;
+  border-radius: 25px;
+  font-family: Verdana;
+  outline: none;
+  outline-width: 0;
+  color: #d92121;
+  width: 350px;
+  padding: 7px;
+  height: 35px;
+  border: 10px #ff0000;
+  border-style: offset;
+  position: absolute;
+  background-position: center;
+  background-color: lightgrey;
+}
+
+#city {
+  margin-top: 120px;
+  border-radius: 25px;
+  font-family: Verdana;
+  outline: none;
+  outline-width: 0;
+  color: #d92121;
+  width: 350px;
+  padding: 7px;
+  height: 35px;
+  border: 10px #ff0000;
+  border-style: offset;
+  position: absolute;
+  background-position: center;
+  background-color: lightgrey;
+}
+
+#state {
+  margin-top: 180px;
+  border-radius: 25px;
+  font-family: Verdana;
+  outline: none;
+  outline-width: 0;
+  color: #d92121;
+  width: 350px;
+  padding: 7px;
+  height: 35px;
+  border: 10px #ff0000;
+  border-style: offset;
+  position: absolute;
+  background-position: center;
+  background-color: lightgrey;
+}
+
+#zip {
+  margin-top: 240px;
+  border-radius: 25px;
+  font-family: Verdana;
+  outline: none;
+  outline-width: 0;
+  color: #d92121;
+  width: 350px;
+  padding: 7px;
+  height: 35px;
+  border: 10px #ff0000;
+  border-style: offset;
+  position: absolute;
+  background-position: center;
+  background-color: lightgrey;
+}
+
+#country {
+  margin-top: 300px;
+  border-radius: 25px;
+  font-family: Verdana;
+  outline: none;
+  outline-width: 0;
+  color: #d92121;
+  width: 350px;
+  padding: 7px;
+  height: 35px;
+  border: 10px #ff0000;
+  border-style: offset;
+  position: absolute;
+  background-position: center;
+  background-color: lightgrey;
+}
+
+#stalls {
+  margin-top: 360px;
+  border-radius: 25px;
+  font-family: Verdana;
+  outline: none;
+  outline-width: 0;
+  color: #d92121;
+  width: 350px;
+  padding: 7px;
+  height: 35px;
+  border: 10px #ff0000;
+  border-style: offset;
+  position: absolute;
+  background-position: center;
+  background-color: lightgrey;
+}
+
+#power {
+  margin-top: 420px;
+  border-radius: 25px;
+  font-family: Verdana;
+  outline: none;
+  outline-width: 0;
+  color: #d92121;
+  width: 350px;
+  padding: 7px;
+  height: 35px;
+  border: 10px #ff0000;
+  border-style: offset;
+  position: absolute;
+  background-position: center;
+  background-color: lightgrey;
+}
+
+#addbtn {
+  font-family: Verdana;
+  outline: none;
+  outline-width: 0;
+  height: 40px;
+  width: 360px;
+  margin-top: 480px;
+  border-radius: 25px;
+  border-style: offset;
+  color: white;
+  border: 3px;
+  background: #d92121;
+  position: absolute;
+  background-position: center;
+}
+
+img {
+  margin-left: 100px;
+  margin-bottom: 80px;
+  height: 100px;
+  width: 100%;
+  border: 0px solid #ddd;
+  border-radius: 0px;
+  padding: 5px;
+  width: 150px;
+}
+
+#login {
+  top: 40px;
+  margin: 0 auto;
+  height: auto;
+  width: 400px;
+  background-size: 400px;
+  border-style: offset;
+  background-position: center;
+}
+
+#logobar {
+  height: 10px;
+  width: 10px;
+}
+
+#logo {
+  margin-top: 10px;
+  margin-left: 10px;
+  height: 80px;
+  width: 10%;
+  border: 0px solid #ddd;
+  border-radius: 0px;
+  padding: 5px;
+  width: 150px;
+}
+
+.headofheader {
+  font-Family: "Verdana";
+  color: black;
+}
