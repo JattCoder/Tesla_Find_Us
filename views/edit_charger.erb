@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link type="text/css" href="/new_charger.css" rel="stylesheet"></link>
+        <div id="logo_bar"><img id="logo" src="/Tesla-logo.png" alt="Tesla"></div>
+        <title>Tesla - Charger Update</title>
+    </head>
+    <body>
+        <div id="login">
+            <h2 class="headofheader">Edit Supercharger</h2>
+            <form action="/account/charger/update" method="POST">
+	            <input type="text" id="name" name="name" value= <%= @@charger[:name] %> placeholder="Location Name">
+                <input type="text" id="street" name="street" value= <%= @@charger[:street] %> placeholder="Street">
+                <input type="text" id="city" name="city" value= <%= @@charger[:city] %> placeholder="City">
+                <input type="text" id="state" name="state" value= <%= @@charger[:state] %> placeholder="State">
+                <input type="text" id="zip" name="zip" value= <%= @@charger[:zip] %> placeholder="zip">
+                <input type="text" id="country" name="country" value= <%= @@charger[:country] %> placeholder="Country">
+                <input type="number" id="stalls" name="stalls" value= <%= @@charger[:stalls] %> placeholder="Stalls">
+                <input type="number" id="power" name="power" value= <%= @@charger[:power] %> placeholder="Power in KW/stall">
+                <input type="hidden" name="id" value= <%= @@charger[:id] %> >
+                <input type="hidden" name="user_id" value= <%= @@charger[:user_id] %> >
+	            <input type="submit" id="addbtn" value="Update Supercharger">
+            </form>
+        </div>
+    </body>
+</html>

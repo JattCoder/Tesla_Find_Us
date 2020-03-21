@@ -96,6 +96,57 @@ class TeslaController < Sinatra::Base
         end
     end
 
+    post '/account/charger/edit' do
+        if params[:user_id].to_i == session[:user_id]
+            @@charger = MySuperchargers.find(params[:id].to_i)
+            erb :edit_charger
+        else
+            redirect to '/'
+        end
+    end
+
+    post '/account/charger/update' do
+        @@charger = MySuperchargers.find(params[:id].to_i)
+        if params[:name] == "" || params[:street] == "" || params[:city] == "" || params[:country] == "" || params[:stalls] == "" || params[:power] == ""
+            erb :edit_charger
+        else
+            if params[:user_id].to_i == session[:user_id]
+                address = "#{params[:street]}, #{params[:city]}, #{params[:state]}, #{params[:zip]}, #{params[:country]}"
+                coordinates = Geocoder.coordinates(address)
+                if coordinates == nil
+                    erb :edit_charger
+                else
+                    @@charger.name = params[:name]
+                    @@charger.street = params[:street]
+                    @@charger.city = params[:city]
+                    @@charger.state = params[:state]
+                    @@charger.zip = params[:zip]
+                    @@charger.country = params[:country]
+                    @@charger.stalls = params[:stalls]
+                    @@charger.power = params[:power]
+                    @@charger.latitude = coordinates[0]
+                    @@charger.longitude = coordinates[1]
+                    if @@charger.save
+                        redirect to '/account'
+                    else
+                        erb :edit_charger
+                    end
+                end
+            else
+                redirect to '/'
+            end
+        end
+    end
+
+    post '/account/charger/delete' do
+        if params[:user_id].to_i == session[:user_id]
+            MySuperchargers.find(params[:id].to_i).destroy
+            redirect to '/account'
+        else
+            redirect to '/'
+        end
+    end
+
     post '/account/search' do
         if session[:user_id] == nil
             redirect to '/'

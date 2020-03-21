@@ -28,11 +28,25 @@
                     <div class="datathree"> <%=   data["country"] %></div> <br><br>
                     <div class="secondtitle">Charging</div>
                     <div class="datathree"> <%= data["stalls"] %> </div> <div class="datathree">superchargers, up to</div> <div class="datathree"><%= data["power"] %> </div> <div class="datathree">kW</div><br><br>
+                    <div class="action">
+                        <form action="/account/charger/edit" method="POST">
+                            <input type="hidden" id="id" name="id" value= <%= data["id"] %> >
+                            <input type="hidden" id="user_id" name="user_id" value= <%= data["user_id"] %> >
+                            <input type="submit" id="editchr" value="Edit">
+                        </form>
+                    </div>
+                    <div class="action">
+                        <form action="/account/charger/delete" method="POST">
+                            <input type="hidden" id="id" name="id" value= <%= data["id"] %> >
+                            <input type="hidden" id="user_id" name="user_id" value= <%= data["user_id"] %> >
+                            <input type="submit" id="delchr" value="Delete">
+                        </form>
+                    </div>
                 </div>
             <% end %></div>
             <div id="addcharger">
                 <form action="/account/new_charger" method="POST">
-                    <input type="submit" id="newchr" value="Add Charger">
+                    <input type="submit" id="newchr" value="Add Supercharger">
                 </form>
             </div>
         </div>
