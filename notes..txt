@@ -1,54 +1,10 @@
-Steps for project
-To find charging locations near me, using zip, city, state
-* Get all locations of superchargers from superchargers.info
+FINISHED.. 
 
-To get geo cordinates for me and destination use geocoder gem
+This application..
 
-#Link with full address
-https://www.tesla.com/trips#/?v=MS_2017_100D&o=5625%20W%20Long%20Ridge%20Dr,%20Seven%20Hills,%20OH%2044131,%20USA_5625%20W%20Long%20Ridge%20Dr%20Seven%20Hills@41.372877,-81.674240&s=&d=1375%20E%20Buena%20Vista%20Dr,%20Orlando,%20FL%2032821,%20USA_1375%20E%20Buena%20Vista%20Dr%20Orlando@28.372642,-81.514287
-
-To get superchargers list and information from tesla website
-* loop thru route chargers
-* get names and duration of charging at each charger and trip duration 
-
-To get superchargers 
-* Scrape stops names and time to charge from tesla website
-* Use names to get locations info from superchargers.info
-
-Use activerecord and sql to save cars and profiles
-
-
-
-
-
-
-GeoCoder 
-To get Coordinates
-Coordinates = Geocoder.coordinates("address")
-address = Geocoder.address([lat,long])
-
-
-
-
-In order to find out best possible route
-EXAMPLE
-stops = []
-car = 250 miles of range
-superchargerid = ""
-loop.. supercharger -->
-if distance between supercharger and desitination is less than start to destination
-    distance_covered = totaldistance - distance between supercharger and destination
-    if distance_covered < (car - 50)
-        superchargerid = current-supper-charer-id
-    else
-        stops << superchargerid
-    end
-    totaldistance = distance between supercharger and destinaiton
-end
-
-
-
-#still left to do
-1. when searching chargers by city,state,zip.. fix state so if users enter entire state, it should work
-2. add sell car button on account page
-3. solve algogethemic way to find chargers on your route.
+1. Find Superchargers using city, state or zipcode
+2. This Application will plan a route from point a to point b (Keep your car charged on your way to destination)
+3. You can add your create, update or delete your own superchargers
+4. Superchargers created by you, can be used by other users for their route but other users can not delete or edit your supercharger.
+5. Other users can locate your supercharger using city, state or zipcode
+6. This Application will plan a route based on car (Range) you purchase from Tesla Marketplace (Hint: Cars are FREE :))
