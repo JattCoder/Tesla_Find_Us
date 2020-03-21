@@ -36,6 +36,12 @@
                     <div class="datathree">Car Battery:</div><div class="datathree"> <%= "#{data["battery"].round(2)}%" %> </div>
                 </div>
             <% end %></div>
+            <div id="destinationchargers">
+                <form action="/account/search" method="POST">
+                    <input type="hidden" id="nearmeh" name="nearmeh" value= <%= params[:destination] %> >
+                    <input type="submit" id="search" value="Destination Superchargers">
+                </form>
+            </div>
         </div>
         <div id="shadow"><img id="con" src="/supercharging.png"></div>
     </body>
