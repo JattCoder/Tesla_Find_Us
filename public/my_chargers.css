@@ -219,38 +219,39 @@ shadow {
     background-position: center;
   }
 
-  #delchr {
+  #editchr {
+    margin-top: -20px;
     font-family: Verdana;
     outline: none;
     outline-width: 0;
     height: 40px;
     width: 80px;
-    margin-top: 10px;
     border-radius: 25px;
     border-style: offset;
     color: white;
     border: 3px;
     background: #d92121;
-    position: absolute;
     background-position: center;
   }
 
-  #editchr {
+  #delchr {
+    margin-top: 10px;
+    margin-bottom: 60px;
     font-family: Verdana;
     outline: none;
     outline-width: 0;
     height: 40px;
     width: 80px;
-    margin-top: 50px;
     border-radius: 25px;
     border-style: offset;
     color: white;
     border: 3px;
     background: #d92121;
-    position: absolute;
     background-position: center;
   }
   
-  #action {
-    margin-left: 200px;
+  .action {
+    height: 100px;
+    margin-left: 80%;
+    margin-bottom: 30%;
   }

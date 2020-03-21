@@ -91,7 +91,7 @@ shadow {
 .box {
     margin-left: 100px;
     box-shadow: 3px 3px 3px 3px;
-    height: 400px;
+    height: 300px;
     width: 460px;
     margin: 15px;
     padding: 5px;
@@ -207,23 +207,3 @@ shadow {
     border: 3px;
     background: #d92121;
   }
-
-  .box {
-    margin-left: 100px;
-    box-shadow: 3px 3px 3px 3px;
-    height: 100px;
-    width: 460px;
-    margin: 15px;
-    padding: 5px;
-    border-radius: 10px;
-    border-style: offset;
-    color:lightgrey;
-    background:	white;
-}
-
-.selftitle {
-  margin: 15px;
-  font-size: 17px;
-  font-Family: "Verdana";
-  color: black;
-}
