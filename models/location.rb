@@ -17,7 +17,7 @@ class Location
                     "country" =>sc.country
                 },
                 "stallCount" => sc.stalls,
-                "powerKiloatt" => sc.power,
+                "powerKilowatt" => sc.power,
                 "gps" => {
                     "latitude" => sc.latitude.to_f,
                     "longitude" => sc.longitude.to_f
