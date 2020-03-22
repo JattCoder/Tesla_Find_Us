@@ -103,6 +103,7 @@ shadow {
 
 .helper {
     margin-left: 18%;
+    margin-bottom: 70px
 }
 
 #lgbtn {
@@ -215,6 +216,7 @@ shadow {
     height: 40px;
     width: 360px;
     margin-top: 50px;
+    margin-bottom: 70px;
     border-radius: 25px;
     border-style: offset;
     color: white;

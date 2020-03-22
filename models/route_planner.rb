@@ -17,6 +17,8 @@ class RoutePlanner
 
     def findroute(start,destination,totaldistance,schargers,car,start_country,dest_country)
         planned_route = {}
+        end_range = 0.30
+        search_tries = 0
         while totaldistance >= 0
             schargers.each do |charger|
                 start_points = [start.split(",")[0].to_f,start.split(",")[1].to_f]
@@ -25,7 +27,7 @@ class RoutePlanner
                 dis_charger_strt = dist_cal([charger["gps"]["latitude"],charger["gps"]["longitude"]],start_points,start_country)
                 #add rules if destination is USA, stops can not be in any other country.
                 #if destination is different country, then other country stops can apply
-                if dis_charger_dest <= totaldistance && dis_charger_strt.between?(car*0.05, car*0.95)
+                if dis_charger_dest <= totaldistance && dis_charger_strt.between?(car*0.10, car*end_range)
                     battery = (((dis_charger_strt / car) * 100) - 100) * (-1)
                     planned_route[charger["locationId"]] = {
                         "locationId" => charger["locationId"],
@@ -40,9 +42,15 @@ class RoutePlanner
                         "region" => charger["address"]["region"],
                         "battery" => battery
                     }
+                    end_range = 0.30
                     totaldistance = totaldistance - dis_charger_strt
                     start = "#{charger["gps"]["latitude"]},#{charger["gps"]["longitude"]}"
                 end
+            end
+            if end_range >= 1.00
+                break
+            elsif end_range < 1.00
+                end_range += 0.10
             end
         end
         planned_route
