@@ -160,6 +160,7 @@ class TeslaController < Sinatra::Base
     end
 
     post '/account/route-planner' do
+        @@planned_route = {}
         if session[:user_id] == nil
             redirect to '/'
         else
@@ -168,12 +169,25 @@ class TeslaController < Sinatra::Base
             else
                 car = Car.where(user: session[:user_id]).last
                 if car != nil
-                    params[:model] = car.model
-                    params[:range] = car.range
                     coordinates = SearchCoordinates.new.coor(params[:start],params[:destination])
-                    params[:start_coor] = coordinates[0]
-                    params[:end_coor] = coordinates[1]
-                    @@planned_route = RoutePlanner.new.geo(coordinates,car.range.to_i)
+                    if coordinates[0] == nil || coordinates[1] == nil
+                        str = "Can not plan a route with given address"
+                        @@planned_route[str] = {
+                            "locationId" => str,
+                            "name" => str,
+                            "street" => "",
+                            "city" => "",
+                            "state" => "",
+                            "zip" => "",
+                            "country" => "",
+                            "chargers" => "N/A",
+                            "power" => "N/A",
+                            "region" => "",
+                            "battery" => 0
+                        }
+                    else
+                        @@planned_route = RoutePlanner.new.geo(coordinates,car.range.to_i)
+                    end
                     erb :route
                 else
                     redirect to '/tesla_collection/shop'
