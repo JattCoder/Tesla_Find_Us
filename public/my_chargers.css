@@ -255,3 +255,30 @@ shadow {
     margin-left: 80%;
     margin-bottom: 30%;
   }
+
+  #newchr {
+    font-family: Verdana;
+    outline: none;
+    outline-width: 0;
+    height: 40px;
+    width: 360px;
+    margin-top: 50px;
+    margin-bottom: 70px;
+    border-radius: 25px;
+    border-style: offset;
+    color: white;
+    border: 3px;
+    background: #d92121;
+    position: absolute;
+    background-position: center;
+  }
+  
+  #addcharger {
+    position: absolute;
+    height: auto;
+    width: 400px;
+    background-size: 400px;
+    border-style: offset;
+    background-position: center;
+    margin-bottom: 40px;
+  }

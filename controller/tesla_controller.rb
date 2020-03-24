@@ -79,10 +79,10 @@ class TeslaController < Sinatra::Base
         if params[:name] == "" || params[:street] == "" || params[:city] == "" || params[:country] == "" || params[:stalls] == "" || params[:power] == ""
             erb :new_charger
         else
-            address = "#{params[:street]}, #{params[:city]}, #{params[:state]}, #{params[:zip]}, #{params[:country]}"
+            address = "#{params[:street]}, #{params[:city]}, #{params[:state]}, #{params[:zip]}, #{params[:country]}".downcase
             coordinates = Geocoder.coordinates(address)
             if coordinates == nil
-                redirect to "/account"
+                erb :new_charger
             else
                 params[:user_id] = session[:user_id]
                 params[:stalls] = params[:stalls].to_i
