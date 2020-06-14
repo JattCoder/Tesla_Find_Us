@@ -1,8 +1,8 @@
 # TeslaFindUs
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/Tesla_Find_us`. To experiment with that code, run `bin/console` for an interactive prompt.
+Welcome to Tesla Find Us gem, this gem can build a route for tesla owners from point A to point B and it can search for superchargers with search, users can search for superchargers using city or state or zip-code.
 
-TODO: Delete this and the text above, and describe your gem
+When planning a route, Tesla Find Us will use Sorting Algorithem to find best route possible. It will make sure you have enough battery level to get to destination. If nessassary, it will provide the list of superchargers you need to make with information of how much of battery will be remaining on arrival, address of supercharger, how many slots are available and how much power can be withdrawn from each slot.
 
 ## Installation
 
@@ -22,7 +22,13 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Excute Tesla_Find_Us:
+
+    $ shotgun
+
+Open weblink in Browser:
+
+    $ localhost:9393
 
 ## Development
 
