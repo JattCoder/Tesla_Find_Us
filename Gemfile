@@ -10,7 +10,7 @@ gem "sinatra"
 gem "capybara"
 gem "shotgun", "~> 0.9.2"
 gem "geocoder"
-gem "activerecord", '<= 5.1'
+gem "activerecord", '<= 5.3'
 gem "sinatra-activerecord"
 gem "bcrypt" #to secure password
 gem "require_all"
